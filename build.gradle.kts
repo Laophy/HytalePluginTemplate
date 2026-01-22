@@ -3,7 +3,7 @@ plugins {
     id("hytale-mod") version "0.+"
 }
 
-group = "com.example"
+group = "com.lakecountrygames"
 version = "0.1.0"
 val javaVersion = 25
 
@@ -20,13 +20,8 @@ dependencies {
 }
 
 hytale {
-    // uncomment if you want to add the Assets.zip file to your external libraries;
-    // ⚠️ CAUTION, this file is very big and might make your IDE unresponsive for some time!
-    //
     // addAssetsDependency = true
 
-    // uncomment if you want to develop your mod against the pre-release version of the game.
-    //
     // updateChannel = "pre-release"
 }
 
@@ -115,7 +110,6 @@ val syncAssets = tasks.register<Copy>("syncAssets") {
 }
 
 afterEvaluate {
-    // Now Gradle will find it, because the plugin has finished working
     val targetTask = tasks.findByName("runServer") ?: tasks.findByName("server")
 
     if (targetTask != null) {
